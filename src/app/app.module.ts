@@ -8,6 +8,7 @@ import { AngularFireModule } from 'angularfire2';
 import { HomeComponent } from './home/home.component';
 import { ROUTING } from './app.routing';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 
 export const firebaseConfig = {
@@ -21,7 +22,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,

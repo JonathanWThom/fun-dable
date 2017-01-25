@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Project } from '../project.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-list',
@@ -9,9 +10,12 @@ import { Project } from '../project.model';
 })
 export class ProjectListComponent implements OnInit {
   @Input() childProjects: FirebaseListObservable<any[]>;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goToProjectDetail(clickedProject) {
+    this.router.navigate(['projects', clickedProject.$key]);
+  }
 }
