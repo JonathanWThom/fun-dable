@@ -8,52 +8,25 @@ import { FirebaseListObservable } from 'angularfire2';
 })
 export class FundingPipe implements PipeTransform {
 
-  transform(input: FirebaseListObservable<any[]>, args: string) {
-    var output: FirebaseListObservable<any[]>;
+  transform(input: any[], args: string) {
+    var output: any[]= [];
 
-  //   if (args === "close") {
-  //     input.forEach(function(project) {
-  //       project.forEach(function(innerInput) {
-  //         if (innerInput.funding / innerInput.cashGoal >= 0.75) {
-  //           output.push(innerInput);
-  //         }
-  //       });
-  //     });
-  //     return output;
-  //   } else if ( args === "notClose") {
-  //     input.forEach(function(project) {
-  //       project.forEach(function(innerInput) {
-  //         if (innerInput.funding / innerInput.cashGoal <= 0.25) {
-  //           output.push(innerInput);
-  //         }
-  //       });
-  //     });
-  //     return output;
-  //   } else {
-  //     return input;
-  //   }
-  // }
-
-  if (args === "close") {
-    input.forEach(function(project) {
-      for (let innerInput of project) {
-        if (innerInput.funding / innerInput.cashGoal >= 0.75) {
-          output.push(innerInput);
+    if (args === "close") {
+      input.forEach(function(project) {
+        if ((project.funding / project.cashGoal) >= 0.75) {
+          output.push(project);
         }
-      }
-    });
-    return output;
-  } else if ( args === "notClose") {
-    input.forEach(function(project) {
-      for (let innerInput of project) {
-        if (innerInput.funding / innerInput.cashGoal <= 0.25) {
-          output.push(innerInput);
+      });
+      return output;
+    } else if (args === "notClose") {
+      input.forEach(function(project) {
+        if ((project.funding / project.cashGoal) <= 0.25) {
+          output.push(project);
         }
-      }
-    });
-    return output;
-  } else {
-    return input;
+      });
+      return output;
+    } else {
+      return input;
+    }
   }
-}
 }

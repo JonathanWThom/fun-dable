@@ -18,7 +18,7 @@ export class ProjectListComponent implements OnInit {
     this.router.navigate(['projects', clickedProject.$key]);
   }
 
-  onChange(option) {
+  onChange(option: string) {
     this.filterByFunding = option;
   }
 
