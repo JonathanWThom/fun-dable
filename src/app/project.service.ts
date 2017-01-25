@@ -18,7 +18,9 @@ export class ProjectService {
   }
 
   fundProject(displayedProject: FirebaseObjectObservable<any>, donation: string) {
-    displayedProject.update({funding: parseInt(donation)});
+    let currentFunding: number;
+    displayedProject.subscribe(x => currentFunding = x.funding + parseInt(donation));
+    displayedProject.update({funding: currentFunding});
   }
 
 
