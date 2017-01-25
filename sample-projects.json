@@ -1,0 +1,18 @@
+{ "projects": [{
+  "name": "Jonathan Give Me Money Fund",
+  "managers": ["Jonathan", "Laura"],
+  "description": "Give Us Your Money Please.",
+  "cashGoal": 1000000,
+  "actionGoal": "We will spend it.",
+  "perks": ["No perks for you", "Only perks for us"],
+  "type": "Personal"
+}, {
+  "name": "Caesar Needs More Food",
+  "managers": ["Tyler", "Lil' Caesar"],
+  "description": "I eat all the food",
+  "cashGoal": 5000000,
+  "actionGoal": "I will eat it. The food, not the money. But maybe some of that too. I would at least lick the money.",
+  "perks": ["I will lick you", "I will get hair on your shirt"],
+  "type": "Personal"
+  }]
+}
