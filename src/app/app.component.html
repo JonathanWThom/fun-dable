@@ -1,8 +1,28 @@
-<div class="container">
+<header class="container">
   <div class="row">
-    <div class="col-sm-6 well">
-      <a routerLink="">Home</a>
+    <div class="col-sm-4">
+      <h1><a routerLink="">FUN</a></h1>
+      <h1><a routerLink="">Dable</a></h1>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+        <li>Log In / Register</li>
+        <li>Search</li>
+      </ul>
+      <ul>
+        <li><a routerLink="Personal">Personal</a></li>
+        <li><a routerLink="Business">Business</a></li>
+        <li><a routerLink="Art">Art</a></li>
+        <li><a routerLink="Technology">Technology</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <div class="create-project">
+
+      </div>
     </div>
   </div>
+</header>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

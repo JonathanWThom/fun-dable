@@ -1,9 +1,8 @@
-<button (click)="showFundForm()" class="btn">Fund Project</button>
-
-<div *ngIf="fundForm">
-  The form will go here!
-
-  <button class="btn">Fund!</button>
-  <button class="btn">I changed my mind.</button>
-
-</div>
+<form>
+  <div class="form-group">
+    <label>How much to donate</label>
+    <input #donation class="form-control" type="number">
+  </div>
+</form>
+<button (click)="fundProject(donation.value)" class="btn">Fund!</button>
+<button class="btn">I changed my mind.</button>

@@ -12,16 +12,30 @@ import { FirebaseObjectObservable } from 'angularfire2';
   providers: [ProjectService]
 })
 export class ProjectDetailComponent implements OnInit {
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private projectService: ProjectService) { }
+
   projectId: string;
   projectToDisplay;
-  constructor(private route: ActivatedRoute, private location: Location, private projectService: ProjectService) { }
+  fundForm: boolean = false;
+
+
+  showFundForm() {
+    this.fundForm = true;
+  }
 
   ngOnInit() {
     this.route.params.forEach((urlParametersArray) => {
       this.projectId = urlParametersArray['id']
     });
     this.projectToDisplay = this.projectService.getProjectById(this.projectId);
-    console.log(this.projectToDisplay.funding);
+  }
+
+  fundProject(donation) {
+    this.projectService.fundProject(this.projectToDisplay, donation);
+
   }
 
 }

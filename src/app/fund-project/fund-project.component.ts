@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-fund-project',
@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fund-project.component.css']
 })
 export class FundProjectComponent implements OnInit {
-  fundForm: boolean = false;
+  @Output() newDonationSender = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
 
-  showFundForm() {
-    this.fundForm = true;
+  fundProject(donation) {
+    this.newDonationSender.emit(donation);
+    console.log('sent');
   }
 
 }

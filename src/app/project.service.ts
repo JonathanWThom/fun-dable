@@ -17,4 +17,9 @@ export class ProjectService {
     return this.angularFire.database.object('/projects/' + projectId);
   }
 
+  fundProject(displayedProject: FirebaseObjectObservable<any>, donation: string) {
+    displayedProject.update({funding: parseInt(donation)});
+  }
+
+
 }

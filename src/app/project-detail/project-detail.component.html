@@ -10,5 +10,7 @@
   <p>{{(projectToDisplay | async)?.type}}</p>
   <p>Funding: {{(projectToDisplay | async)?.funding}}</p>
 </div>
-
-<app-fund-project></app-fund-project>
+<button (click)="showFundForm()" class="btn">Fund Project</button>
+<div *ngIf="fundForm">
+  <app-fund-project (newDonationSender)="fundProject($event)"></app-fund-project>
+</div>
