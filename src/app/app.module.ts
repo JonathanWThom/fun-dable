@@ -10,6 +10,7 @@ import { ROUTING } from './app.routing';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { FundingPipe } from './funding.pipe';
+import { FundProjectComponent } from './fund-project/fund-project.component';
 
 
 export const firebaseConfig = {
@@ -25,7 +26,8 @@ export const firebaseConfig = {
     HomeComponent,
     ProjectListComponent,
     ProjectDetailComponent,
-    FundingPipe
+    FundingPipe,
+    FundProjectComponent
   ],
   imports: [
     BrowserModule,
