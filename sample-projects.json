@@ -5,7 +5,8 @@
   "cashGoal": 1000000,
   "actionGoal": "We will spend it.",
   "perks": ["No perks for you", "Only perks for us"],
-  "type": "Personal"
+  "type": "Personal",
+  "funding": 0
 }, {
   "name": "Caesar Needs More Food",
   "managers": ["Tyler", "Lil' Caesar"],
@@ -13,6 +14,7 @@
   "cashGoal": 5000000,
   "actionGoal": "I will eat it. The food, not the money. But maybe some of that too. I would at least lick the money.",
   "perks": ["I will lick you", "I will get hair on your shirt"],
-  "type": "Personal"
+  "type": "Personal",
+  "funding": 0
   }]
 }

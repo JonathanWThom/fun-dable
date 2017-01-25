@@ -1,3 +1,9 @@
-<ul *ngFor="let project of childProjects | async">
+<select (change)="onChange($event.target.value)">
+  <option value="allProjects" selected="selected">All Projects</option>
+  <option value="notClose">Less than 25% funding</option>
+  <option value="close">75% funded</option>
+</select>
+
+<ul *ngFor="let project of childProjects | async | funding:filterByFunding">
   <li (click)="goToProjectDetail(project)">{{project.name}}</li>
 </ul>

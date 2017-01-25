@@ -21,6 +21,7 @@ export class ProjectDetailComponent implements OnInit {
       this.projectId = urlParametersArray['id']
     });
     this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+    console.log(this.projectToDisplay.funding);
   }
 
 }

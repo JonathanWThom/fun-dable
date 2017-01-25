@@ -12,10 +12,17 @@ export class ProjectListComponent implements OnInit {
   @Input() childProjects: FirebaseListObservable<any[]>;
   constructor(private router: Router) { }
 
-  ngOnInit() {
-  }
+  filterByFunding: string = "allProjects";
 
   goToProjectDetail(clickedProject) {
     this.router.navigate(['projects', clickedProject.$key]);
   }
+
+  onChange(option) {
+    this.filterByFunding = option;
+  }
+
+  ngOnInit() {
+  }
+
 }
