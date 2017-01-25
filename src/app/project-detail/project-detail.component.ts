@@ -33,8 +33,13 @@ export class ProjectDetailComponent implements OnInit {
     this.projectToDisplay = this.projectService.getProjectById(this.projectId);
   }
 
+  hideFund() {
+    this.fundForm = false;
+  }
+
   fundProject(donation) {
     this.projectService.fundProject(this.projectToDisplay, donation);
+    this.fundForm = false;
 
   }
 

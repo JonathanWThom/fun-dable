@@ -12,5 +12,5 @@
 </div>
 <button (click)="showFundForm()" class="btn">Fund Project</button>
 <div *ngIf="fundForm">
-  <app-fund-project (newDonationSender)="fundProject($event)"></app-fund-project>
+  <app-fund-project (newDonationSender)="fundProject($event)" (hideSender)="hideFund()"></app-fund-project>
 </div>

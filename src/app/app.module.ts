@@ -11,6 +11,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { FundingPipe } from './funding.pipe';
 import { FundProjectComponent } from './fund-project/fund-project.component';
+import { AdminComponent } from './admin/admin.component';
+import { NewProjectComponent } from './new-project/new-project.component';
 
 
 export const firebaseConfig = {
@@ -27,7 +29,9 @@ export const firebaseConfig = {
     ProjectListComponent,
     ProjectDetailComponent,
     FundingPipe,
-    FundProjectComponent
+    FundProjectComponent,
+    AdminComponent,
+    NewProjectComponent
   ],
   imports: [
     BrowserModule,

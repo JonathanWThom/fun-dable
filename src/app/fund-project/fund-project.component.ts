@@ -7,14 +7,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FundProjectComponent implements OnInit {
   @Output() newDonationSender = new EventEmitter();
+  @Output() hideSender = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
 
+  hideFund() {
+    this.hideSender.emit();
+  }
+
   fundProject(donation) {
     this.newDonationSender.emit(donation);
-    console.log('sent');
   }
 
 }

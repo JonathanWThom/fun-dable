@@ -23,5 +23,9 @@ export class ProjectService {
     displayedProject.update({funding: currentFunding});
   }
 
+  addProject(newProject: Project) {
+    this.projects.push(newProject);
+  }
+
 
 }
