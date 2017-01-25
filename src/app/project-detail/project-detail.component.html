@@ -1,3 +1,12 @@
-<p>
-  project-detail works!
-</p>
+<div>
+  <h3>{{(projectToDisplay | async)?.name}}</h3>
+  <h4>{{(projectToDisplay | async)?.description}}</h4>
+  <p>{{(projectToDisplay | async)?.managers[0]}}</p>
+  <p>{{(projectToDisplay | async)?.managers[1]}}</p>
+  <p>{{(projectToDisplay | async)?.cashGoal}}</p>
+  <p>{{(projectToDisplay | async)?.actionGoal}}</p>
+  <p>{{(projectToDisplay | async)?.perks[0]}}</p>
+  <p>{{(projectToDisplay | async)?.perks[1]}}</p>
+  <p>{{(projectToDisplay | async)?.type}}</p>
+  <p>{{(projectToDisplay | async)?.funding}}</p>
+</div>
