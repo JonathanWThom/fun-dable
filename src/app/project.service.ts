@@ -43,5 +43,7 @@ export class ProjectService {
     projectFB.remove();
   }
 
+  //query for type parameters
+  //https://firebase.google.com/docs/reference/js/firebase.database.Query
 
 }

@@ -14,6 +14,9 @@ import { FundProjectComponent } from './fund-project/fund-project.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { ArtComponent } from './art/art.component';
+import { BusinessComponent } from './business/business.component';
+import { PersonalComponent } from './personal/personal.component';
 
 
 export const firebaseConfig = {
@@ -33,7 +36,10 @@ export const firebaseConfig = {
     FundProjectComponent,
     AdminComponent,
     NewProjectComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    ArtComponent,
+    BusinessComponent,
+    PersonalComponent
   ],
   imports: [
     BrowserModule,
