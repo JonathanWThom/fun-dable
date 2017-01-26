@@ -16,7 +16,7 @@ export class UserProfileComponent implements OnInit {
     this.af.auth.subscribe(user => {
       if(user){
         this.user = user;
-        this.projects = this.projectService.findUserProjects();
+        this.projects = this.projectService.findUserProjects(user);
       } else {
         this.user ={}
       }
