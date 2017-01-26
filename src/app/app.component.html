@@ -6,7 +6,8 @@
     </div>
     <div class="col-sm-6">
       <ul>
-        <li><a href="">Log In / Register</a></li>
+        <li *ngIf="!loggedIn"><a (click)="login()">Log In / Register</a></li>
+        <li *ngIf="loggedIn"><a (click)="logout()">Log Out</a></li>
         <li><a href="">Search</a></li>
         <li><img src="" alt=""></li>
       </ul>

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { HomeComponent } from './home/home.component';
 import { ROUTING } from './app.routing';
 import { ProjectListComponent } from './project-list/project-list.component';
@@ -26,6 +26,11 @@ export const firebaseConfig = {
   storageBucket: masterFirebaseConfig.storageBucket
 };
 
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Github,
+  method: AuthMethods.Popup
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +51,7 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     ROUTING,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
