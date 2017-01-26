@@ -1,53 +1,55 @@
-<h3>Add New Project to Fun-Dable</h3>
-<div>
+<div *ngIf="" class="">
+  <h3>Add New Project to Fun-Dable</h3>
   <div>
-    <label>Project Name</label>
-    <br>
-    <input #newName>
-  </div>
+    <div>
+      <label>Project Name</label>
+      <br>
+      <input #newName>
+    </div>
 
-  <div>
-    <label>Project Managers</label>
-    <br>
-    <input #newManager>
-    <!--append more-->
-  </div>
+    <div>
+      <label>Project Managers</label>
+      <br>
+      <input #newManager>
+      <!--append more-->
+    </div>
 
-  <div>
-    <label>Description</label>
-    <br>
-    <textarea #newDescription></textarea>
-  </div>
+    <div>
+      <label>Description</label>
+      <br>
+      <textarea #newDescription></textarea>
+    </div>
 
-  <div>
-    <label>Cash Goal</label>
-    <br>
-    <input type="number" #newCashGoal>
-    <!--parse this-->
-  </div>
+    <div>
+      <label>Cash Goal</label>
+      <br>
+      <input type="number" #newCashGoal>
+      <!--parse this-->
+    </div>
 
-  <div>
-    <label>Action Goal</label>
-    <br>
-    <textarea #newActionGoal></textarea>
-    <!--append more-->
-  </div>
+    <div>
+      <label>Action Goal</label>
+      <br>
+      <textarea #newActionGoal></textarea>
+      <!--append more-->
+    </div>
 
-  <div>
-    <label>Perks</label>
-    <br>
-    <textarea #newPerk></textarea>
-    <!--append more-->
-  </div>
+    <div>
+      <label>Perks</label>
+      <br>
+      <textarea #newPerk></textarea>
+      <!--append more-->
+    </div>
 
-  <div>
-    <label>Type</label>
-    <br>
-    <select #newType>
-      <option value="Personal" selected>Personal</option>
-      <option value="Business">Business</option>
-      <option value="Art">Art</option>
-    </select>
+    <div>
+      <label>Type</label>
+      <br>
+      <select #newType>
+        <option value="Personal" selected>Personal</option>
+        <option value="Business">Business</option>
+        <option value="Art">Art</option>
+      </select>
+    </div>
+    <button class="btn btn-success" (click)="createProject(newName.value, newManager.value, newDescription.value, newCashGoal.value, newActionGoal.value, newPerk.value, newType.value); newName.value=''; newManager.value=''; newDescription.value=''; newCashGoal.value=''; newActionGoal.value=''; newPerk.value=''; newType.value=''">Add</button>
   </div>
-  <button class="btn btn-success" (click)="createProject(newName.value, newManager.value, newDescription.value, newCashGoal.value, newActionGoal.value, newPerk.value, newType.value); newName.value=''; newManager.value=''; newDescription.value=''; newCashGoal.value=''; newActionGoal.value=''; newPerk.value=''; newType.value=''">Add</button>
 </div>

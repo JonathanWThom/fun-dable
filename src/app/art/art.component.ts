@@ -9,8 +9,17 @@ import { ProjectService } from '../project.service';
   providers: [ProjectService]
 })
 export class ArtComponent implements OnInit {
+  user: any = {};
   projects: FirebaseListObservable<any[]>;
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService, public af: AngularFire) {
+    this.af.auth.subscribe(user => {
+      if(user){
+        this.user = user;
+      } else {
+        this.user ={}
+      }
+    });
+   }
 
   ngOnInit() {
     this.projects = this.projectService.findArt();

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Project } from '../project.model';
-import { AuthenticationService } from '../authentication.service';
+import { AuthenticationService, USER } from '../authentication.service';
 
 @Component({
   selector: 'app-admin',
@@ -11,32 +11,28 @@ import { AuthenticationService } from '../authentication.service';
   providers: [ProjectService, AuthenticationService]
 })
 export class AdminComponent implements OnInit {
-  user: any = {};
+  user = {};
   projects: FirebaseListObservable<any[]>;
-  loggedIn: boolean = false;
+  adminLoggedIn: boolean = false;
   constructor(private projectService: ProjectService, public authenticationService: AuthenticationService) { }
 
   ngOnInit() {
-    this.projects = this.projectService.getProjects();
-    this.projects.forEach(function(project) {
-      project.forEach(function(innerProject) {
-        console.log(innerProject.funding);
-      })
-    })
+    this.user = this.authenticationService.findUser();
   }
 
   login() {
-    this.authenticationService.login().then((user) => {
-      this.user = user;
-      this.loggedIn = true;
-    });
+    this.authenticationService.login();
   }
 
   logout() {
      this.authenticationService.logout().then((user) => {
       this.user = {};
-      this.loggedIn = false;
+      this.adminLoggedIn = false;
      })
+   }
+
+   printUser() {
+     console.log(this.authenticationService.findUser());
    }
 
 }

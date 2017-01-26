@@ -17,6 +17,7 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
 import { ArtComponent } from './art/art.component';
 import { BusinessComponent } from './business/business.component';
 import { PersonalComponent } from './personal/personal.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 export const firebaseConfig = {
@@ -44,7 +45,8 @@ const myFirebaseAuthConfig = {
     EditProjectComponent,
     ArtComponent,
     BusinessComponent,
-    PersonalComponent
+    PersonalComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

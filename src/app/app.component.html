@@ -6,8 +6,8 @@
     </div>
     <div class="col-sm-6">
       <ul>
-        <li *ngIf="!loggedIn"><a (click)="login()">Log In / Register</a></li>
-        <li *ngIf="loggedIn"><a (click)="logout()">Log Out</a></li>
+        <li ><a (click)="login()">Log In / Register</a></li>
+        <li ><a (click)="logout()">Log Out</a></li>
         <li><a href="">Search</a></li>
         <li><img src="" alt=""></li>
       </ul>
@@ -19,7 +19,7 @@
       </ul>
     </div>
     <div class="col-sm-2">
-      <div routerLink='admin' class="create-project">
+      <div routerLink='newproject' class="create-project">
         <span>Get Funded!</span>
       </div>
     </div>
