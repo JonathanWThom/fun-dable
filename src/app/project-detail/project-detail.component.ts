@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProjectService } from '../project.service';
-import { FirebaseObjectObservable } from 'angularfire2';
+import { FirebaseObjectObservable, AuthProviders, AuthMethods } from 'angularfire2';
 
 
 @Component({

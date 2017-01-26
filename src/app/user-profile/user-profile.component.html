@@ -1,3 +1,5 @@
-<p>
-  user-profile works!
-</p>
+{{user.auth.displayName}}
+{{user.auth.uid}}
+<div *ngFor="let project of projects | async">
+  {{project.name}}
+</div>
