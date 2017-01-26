@@ -1,2 +1,7 @@
-<app-new-project></app-new-project>
-<app-project-list [childProjects]="projects"></app-project-list>
+<li *ngIf="!loggedIn"><a (click)="login()">Log In / Register</a></li>
+<li *ngIf="loggedIn"><a (click)="logout()">Log Out</a></li>
+
+<div *ngIf="loggedIn">
+  <app-new-project></app-new-project>
+  <app-project-list [childProjects]="projects"></app-project-list>
+</div>
