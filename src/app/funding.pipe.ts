@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { FirebaseListObservable } from 'angularfire2';
 
 
 @Pipe({

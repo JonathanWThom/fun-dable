@@ -1,0 +1,57 @@
+
+<button (click)="showEditForm()">Edit Project</button>
+<div *ngIf="editForm">
+  <h3>Add New Project to Fun-Dable</h3>
+  <div>
+    <div>
+      <label>Project Name</label>
+      <br>
+      <input [(ngModel)]="currentProject.name">
+    </div>
+
+    <div>
+      <label>Project Managers</label>
+      <br>
+      <input [(ngModel)]="currentProject.managers[0]">
+      <!--append more-->
+    </div>
+
+    <div>
+      <label>Description</label>
+      <br>
+      <textarea [(ngModel)]="currentProject.description"></textarea>
+    </div>
+
+    <div>
+      <label>Cash Goal</label>
+      <br>
+      <input type="number" [(ngModel)]="currentProject.cashGoal">
+      <!--parse this-->
+    </div>
+
+    <div>
+      <label>Action Goal</label>
+      <br>
+      <textarea [(ngModel)]="currentProject.actionGoal"></textarea>
+      <!--append more-->
+    </div>
+
+    <div>
+      <label>Perks</label>
+      <br>
+      <textarea [(ngModel)]="currentProject.perks[0]"></textarea>
+      <!--append more-->
+    </div>
+
+    <div>
+      <label>Type</label>
+      <br>
+      <select [(ngModel)]="currentProject.Type">
+        <option value="Personal" selected>Personal</option>
+        <option value="Business">Business</option>
+        <option value="Art">Art</option>
+      </select>
+    </div>
+    <button (click)="updateProject()">UPDATE PROJECT</button>
+  </div>
+</div>

@@ -14,6 +14,11 @@ header  {
   margin-top: 25px;
   margin-bottom: 50px;
   border-bottom: 5px solid black;
+  div.col-sm-4,
+  div.col-sm-6,
+  div.col-sm-2 {
+    padding: 0;
+  }
   ul {
     float: right;
     li {
@@ -33,10 +38,13 @@ header  {
     }
     &:nth-child(2) {
       position: relative;
-      top: 0px;
+      top: -5px;
       li {
         padding: 25px;
         a {
+          vertical-align: center;
+          display: inline-block;
+          padding-bottom: 15px;
         }
       }
     }

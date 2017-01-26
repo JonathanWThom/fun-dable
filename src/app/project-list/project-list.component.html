@@ -6,4 +6,7 @@
 
 <ul *ngFor="let project of childProjects | async | funding:filterByFunding">
   <li (click)="goToProjectDetail(project)">{{project.name}}</li>
+  <div *ngIf="currentRoute === '/admin'">
+    <app-edit-project [currentProject]="project"></app-edit-project>
+  </div>
 </ul>

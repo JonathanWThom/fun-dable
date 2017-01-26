@@ -26,6 +26,17 @@ export class ProjectService {
   addProject(newProject: Project) {
     this.projects.push(newProject);
   }
+  update(project: any) {
+    var projectFB = this.getProjectById(project.$key);
+    projectFB.update({name: project.name,
+                      managers: project.managers,
+                      description: project.description,
+                      cashGoal: project.cashGoal,
+                      actionGoal: project.actionGoal,
+                      perks: project.perks,
+                      type: project.type
+                    });
+  }
 
 
 }

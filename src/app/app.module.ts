@@ -13,6 +13,7 @@ import { FundingPipe } from './funding.pipe';
 import { FundProjectComponent } from './fund-project/fund-project.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewProjectComponent } from './new-project/new-project.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 
 export const firebaseConfig = {
@@ -31,7 +32,8 @@ export const firebaseConfig = {
     FundingPipe,
     FundProjectComponent,
     AdminComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,

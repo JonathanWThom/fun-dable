@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ProjectListComponent implements OnInit {
   @Input() childProjects: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
   constructor(private router: Router) { }
 
   filterByFunding: string = "allProjects";
