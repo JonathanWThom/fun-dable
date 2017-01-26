@@ -50,10 +50,30 @@ export class ProjectService {
         equalTo: 'Art'
       }
     });
-    return queryObservable;
+    this.projects = queryObservable;
+    return this.projects;
   }
 
-  //query for type parameters
-  //https://firebase.google.com/docs/reference/js/firebase.database.Query
+  findBusiness() {
+    var queryObservable: FirebaseListObservable<any[]> = this.angularFire.database.list('/projects', {
+      query: {
+        orderByChild: 'type',
+        equalTo: 'Business'
+      }
+    });
+    this.projects = queryObservable;
+    return this.projects;
+  }
+
+  findPersonal() {
+    var queryObservable: FirebaseListObservable<any[]> = this.angularFire.database.list('/projects', {
+      query: {
+        orderByChild: 'type',
+        equalTo: 'Personal'
+      }
+    });
+    this.projects = queryObservable;
+    return this.projects;
+  }
 
 }
