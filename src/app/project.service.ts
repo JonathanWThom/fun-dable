@@ -76,15 +76,15 @@ export class ProjectService {
     return this.projects;
   }
 
-  // findUserProjects(user) {
-  //   var queryObservable: FirebaseListObservable<any[]> = this.angularFire.database.list('/projects', {
-  //     query: {
-  //       orderByChild: 'type',
-  //       equalTo: 'Art'
-  //     }
-  //   });
-  //   this.projects = queryObservable;
-  //   return this.projects;
-  // }
+  findUserProjects() {
+    var queryObservable: FirebaseListObservable<any[]> = this.angularFire.database.list('/projects', {
+      query: {
+        orderByChild: 'user',
+        equalTo: 'QUYEHEI2h3avvEODkL0CgRFp9072'
+      }
+    });
+    this.projects = queryObservable;
+    return this.projects;
+  }
 
 }
