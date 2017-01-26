@@ -1,3 +1,6 @@
+@import '_globals';
+
+
 body {
   font-family: "Helvetica", sans-serif;
 }
@@ -5,69 +8,90 @@ body {
 a {
   color: black;
   &:hover {
-    color: black;
+    color: white;
     text-decoration: none;
   }
 }
 
 header  {
+  @include inline-ul;
+  ul {
+    margin: 0;
+    display: block;
+    padding-left: 0;
+    display: flex;
+    justify-content: flex-end;
+    li {
+      a {
+        padding: 15px;
+        text-align: right;
+        font-weight: bold;
+      }
+      &:last-child {
+        margin-right: 25px;
+      }
+    }
+    &:nth-child(2) {
+    position: relative;
+    top: 10px;
+    li {
+      transition: 200ms;
+      &:hover {
+        background-color: black;
+      }
+      a {
+        display: inline-block;
+        padding: 15px;
+        color: black;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    }
+  }
   margin-top: 25px;
-  margin-bottom: 50px;
-  border-bottom: 5px solid black;
+  margin-bottom: 10px;
   div.col-sm-4,
   div.col-sm-6,
   div.col-sm-2 {
     padding: 0;
   }
-  ul {
-    float: right;
-    li {
-      display: inline-block;
-      text-align: center;
-      height: 25px;
-      &:hover {
-        background-color: black;
-        a {
-          color: white;
-          text-decoration: none;
-        }
-      }
-      a {
-        // text-align: center;
-      }
-    }
-    &:nth-child(2) {
-      position: relative;
-      top: -5px;
-      li {
-        padding: 25px;
-        a {
-          vertical-align: center;
-          display: inline-block;
-          padding-bottom: 15px;
-        }
-      }
-    }
-  }
+
   h1 {
     padding: 0;
     margin: 0;
     a {
       color: black;
       font-weight: bold;
-      font-size: 4rem;
+      font-size: 3rem;
+      letter-spacing: .5rem;
       &:hover {
         color: black;
         text-decoration: none;
       }
+      &:focus {
+        color: black;
+        text-decoration: none;
+      }
+    }
+    a.firsth1 {
+      font-size: 3.5rem;
+      letter-spacing: 2.5rem;
     }
   }
   .create-project {
     border: 2px solid red;
     height: 80px;
     margin-bottom: 15px;
-    color: white;
+    color: red;
+    font-weight: bold;
     transition: .5s;
+    span {
+      position: relative;
+      top: 45px;
+      left: 10px;
+    }
     &:hover{
       color: white;
       background-color: red;
@@ -75,4 +99,8 @@ header  {
 
     }
   }
+}
+
+.router-wrapper {
+  padding: 0;
 }

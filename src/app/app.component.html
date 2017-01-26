@@ -1,13 +1,14 @@
 <header class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h1><a routerLink="">FUN</a></h1>
+      <h1><a class="firsth1" routerLink="">FUN</a></h1>
       <h1><a routerLink="">DABLE</a></h1>
     </div>
     <div class="col-sm-6">
       <ul>
-        <li>Log In / Register</li>
-        <li>Search</li>
+        <li><a href="">Log In / Register</a></li>
+        <li><a href="">Search</a></li>
+        <li><img src="" alt=""></li>
       </ul>
       <ul>
         <li><a routerLink="personal">Personal</a></li>
@@ -18,11 +19,11 @@
     </div>
     <div class="col-sm-2">
       <div routerLink='admin' class="create-project">
-
+        <span>Get Funded!</span>
       </div>
     </div>
   </div>
 </header>
-<div class="container">
+<div class="container router-wrapper">
   <router-outlet></router-outlet>
 </div>

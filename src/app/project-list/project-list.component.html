@@ -1,12 +1,38 @@
-<select (change)="onChange($event.target.value)">
-  <option value="allProjects" selected="selected">All Projects</option>
-  <option value="notClose">Less than 25% funding</option>
-  <option value="close">75% funded</option>
-</select>
-
-<ul *ngFor="let project of childProjects | async | funding:filterByFunding">
-  <li (click)="goToProjectDetail(project)">{{project.name}}</li>
-  <div *ngIf="currentRoute === '/admin'">
-    <app-edit-project [currentProject]="project"></app-edit-project>
+<div class="col-sm-6 cover-image">
+  <div class="top">
+    <h1>at <span class="logo">Fun.dable</span> we believe that you don't need to work hard to make money. You only need to ask other people for it. Maybe make some arts and crafts for in exchange for it...:)</h1>
   </div>
-</ul>
+  <div class="bottom">
+
+  </div>
+</div>
+<div class="col-sm-6 project-list">
+  <div class="col-sm-12 date-div">
+    <h1>RECENT PROJECTS</h1>
+    <h1 class="date">{{todaysDate | date:'MM.dd'}}</h1>
+    <h5>Your help <span>could</span> will make a difference</h5>
+  </div>
+  <!-- <select (change)="onChange($event.target.value)">
+    <option value="allProjects" selected="selected">All Projects</option>
+    <option value="notClose">Less than 25% funding</option>
+    <option value="close">75% funded</option>
+  </select> -->
+
+  <div class="project-container" *ngFor="let project of childProjects | async | funding:filterByFunding">
+    <div class="col-sm-2">
+      <h6>01</h6>
+    </div>
+    <div class="col-sm-10">
+      <h2 class="title" (click)="goToProjectDetail(project)">{{project.name}}</h2>
+      <h4 class="description">{{project.description}}</h4>
+      <h5>Funding needed to reach goal: $<span class="money">{{project.cashGoal}}</span></h5>
+      <h5 class="mang">Project Manager(s): </h5>
+      <ul class="manager-ul" *ngFor="let mang of project.managers">
+        <li>{{mang}}</li>
+      </ul>
+      <div *ngIf="currentRoute === '/admin'">
+        <app-edit-project [currentProject]="project"></app-edit-project>
+      </div>
+    </div>
+  </div>
+</div>

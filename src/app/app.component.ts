@@ -8,5 +8,5 @@ import { Project } from './project.model';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  title = 'app works!';
+
 }

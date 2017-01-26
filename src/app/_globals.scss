@@ -1,0 +1,21 @@
+@mixin inline-ul {
+  ul {
+    display: block;
+    li {
+      display: inline-block;
+      color: black;
+      a {
+        color: black;
+        text-decoration: none;
+        &:hover {
+          color: black;
+          text-decoration: none;
+        }
+        &:focus {
+          color: black;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
