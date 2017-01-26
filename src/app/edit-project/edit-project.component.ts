@@ -21,6 +21,7 @@ export class EditProjectComponent implements OnInit {
   }
 
   updateProject() {
+    console.log(this.currentProject);
     this.projectService.update(this.currentProject);
   }
 

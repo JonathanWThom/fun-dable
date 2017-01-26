@@ -43,6 +43,16 @@ export class ProjectService {
     projectFB.remove();
   }
 
+  findArt() {
+    var queryObservable: FirebaseListObservable<any[]> = this.angularFire.database.list('/projects', {
+      query: {
+        orderByChild: 'type',
+        equalTo: 'Art'
+      }
+    });
+    return queryObservable;
+  }
+
   //query for type parameters
   //https://firebase.google.com/docs/reference/js/firebase.database.Query
 

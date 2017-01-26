@@ -9,12 +9,12 @@ import { ProjectService } from '../project.service';
   providers: [ProjectService]
 })
 export class ArtComponent implements OnInit {
-  projects: FirebaseListObservable<any[]>;
+  projects: any;
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.projects = this.projectService.getProjects();
-    //change the service later
+    this.projects = this.projectService.findArt();
+    console.log(this.projects);
   }
 
 }
