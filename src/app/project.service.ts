@@ -38,5 +38,10 @@ export class ProjectService {
                     });
   }
 
+  deleteProject(project) {
+    var projectFB = this.getProjectById(project.$key);
+    projectFB.remove();
+  }
+
 
 }
