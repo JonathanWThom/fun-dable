@@ -10,7 +10,7 @@ export class AuthenticationService {
     return this.af.auth.login({
       provider: AuthProviders.Github,
       method: AuthMethods.Popup
-    })
+    });
   }
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../project.model';
-import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 import { ProjectService } from '../project.service';
 import { AuthenticationService } from '../authentication.service';
 
@@ -16,8 +16,7 @@ export class NewProjectComponent implements OnInit {
   constructor(private projectService: ProjectService, private as: AuthenticationService) { }
 
   ngOnInit() {
-    this.user = this.as.findUser();
-    // this.projects = this.projectService.findUserProjects(this.user);
+
   }
 
   createProject(name: string, managers: string, description: string, cashGoal: string, actionGoal: string, perks: string, type: string) {
