@@ -77,7 +77,6 @@ export class ProjectService {
   }
 
   findUserProjects(user) {
-    console.log(user.auth.uid);
     var queryObservable: FirebaseListObservable<any[]> = this.angularFire.database.list('/projects', {
       query: {
         orderByChild: 'user',

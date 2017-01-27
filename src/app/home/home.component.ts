@@ -15,11 +15,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.projects = this.projectService.getProjects();
-    this.projects.forEach(function(project) {
-      project.forEach(function(innerProject) {
-        console.log(innerProject.funding);
-      })
-    })
   }
 
 }
