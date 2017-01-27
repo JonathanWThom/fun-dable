@@ -14,24 +14,32 @@ export class AdminComponent implements OnInit {
   user = {};
   projects: FirebaseListObservable<any[]>;
   adminLoggedIn: boolean = false;
-  constructor(private projectService: ProjectService, public authenticationService: AuthenticationService) { }
+  constructor(private projectService: ProjectService, public authenticationService: AuthenticationService, public af: AngularFire) {
+    this.af.auth.subscribe(user => {
+      if(user){
+        this.user = user;
+        this.projects = this.projectService.getProjects();
+      } else {
+        this.user ={}
+      }
+    });}
 
   ngOnInit() {
 
   }
 
-  login() {
-    this.authenticationService.login();
-  }
-
-  logout() {
-     this.authenticationService.logout().then((user) => {
-      this.user = {};
-      this.adminLoggedIn = false;
-     })
-   }
-
-   printUser() {
-   }
+  // login() {
+  //   this.authenticationService.login();
+  // }
+  //
+  // logout() {
+  //    this.authenticationService.logout().then((user) => {
+  //     this.user = {};
+  //     this.adminLoggedIn = false;
+  //    })
+  //  }
+  //
+  //  printUser() {
+  //  }
 
 }

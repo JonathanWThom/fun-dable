@@ -1,11 +1,4 @@
-<li *ngIf="!adminLoggedIn"><a (click)="login()">Log In / Register</a></li>
-<li *ngIf="adminLoggedIn"><a (click)="logout()">Log Out</a></li>
-
-<div *ngIf="adminLoggedIn">
+<div>
   <app-new-project></app-new-project>
   <app-project-list [childProjects]="projects"></app-project-list>
 </div>
-
-<button (click)="printUser()" class="">
-  {{user.auth.displayName | async}}
-</button>
